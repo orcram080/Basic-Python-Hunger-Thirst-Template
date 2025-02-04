@@ -1,0 +1,208 @@
+import random 
+SoupCan = 5
+WaterBottle = 5
+Hunger = 100
+Thirst = 100
+Bigloop = True
+Hungryloop = False
+Thirstyloop = False
+Eatloop = False
+Drinkloop = False
+while (Bigloop == True):
+    Hungryloop = True
+    while (Hungryloop == True):
+        Hungertake = random.randint(1,5)
+        if (Hungertake == 1):
+            Hunger = random.randint(90,99)
+            print("Hunger:", Hunger)
+            Hungryloop = False
+            Thirstyloop = True
+        if (Hungertake == 2):
+            Hunger = random.randint(80,89)
+            print("Hunger:", Hunger)
+            Hungryloop = False
+            Thirstyloop = True
+        if (Hungertake == 3):
+            Hunger = random.randint(75,79)
+            print("Hunger:", Hunger)
+            Hungryloop = False
+            Thirstyloop = True
+        if (Hungertake == 4):
+            Hunger = random.randint(70,74)
+            print("Hunger:", Hunger)
+            Hungryloop = False
+            Thirstyloop = True
+        if (Hungertake == 5):
+            Hunger = random.randint(60,69)
+            print("Hunger:", Hunger)
+            Hungryloop = False
+            Thirstyloop = True
+    while (Thirstyloop == True):
+        Thirsttake = random.randint(1,5)
+        if (Thirsttake == 1):
+            Thirst = random.randint(90,99)
+            print("Thirst:", Thirst)
+            Thirstyloop = False
+            Eatloop = True
+        if (Thirsttake == 2):
+            Thirst = random.randint(80,89)
+            print("Thirst:", Thirst)
+            Thirstyloop = False
+            Eatloop = True
+        if (Thirsttake == 3):
+            Thirst = random.randint(75,79)
+            print("Thirst:", Thirst)
+            Thirstyloop = False
+            Eatloop = True
+        if (Thirsttake == 4):
+            Thirst = random.randint(70,74)
+            print("Thirst:", Thirst)
+            Thirstyloop = False
+            Eatloop = True
+        if (Thirsttake == 5):
+            Thirst = random.randint(60,69)
+            print("Thirst:", Thirst)
+            Thirstyloop = False
+            Eatloop = True
+    while (Eatloop == True):
+        if (SoupCan > 1 and Hunger < 100): 
+            print("You have", SoupCan, "cans of soup.")
+            Eat = input("Would you like to eat one?  y/n")
+            if Eat == "n":
+                Eatloop = False
+                Drinkloop = True
+            if Eat == "y":
+                SoupCan = SoupCan - 1
+                HungerAdd = random.randint(1,5)
+                if HungerAdd == 1:
+                    Hunger = Hunger + random.randint(10,15)
+                    if (Hunger > 100):
+                        Hunger = 100
+                    print("Hunger:", Hunger)
+                if HungerAdd == 2:
+                    Hunger = Hunger + random.randint(16,20)
+                    if (Hunger > 100):
+                        Hunger == 100
+                    print("Hunger:", Hunger)
+                if HungerAdd == 3:
+                    Hunger = Hunger + random.randint(21,25)
+                    if (Hunger > 100):
+                        Hunger = 100
+                    print("Hunger:", Hunger)
+                if HungerAdd == 4:
+                    Hunger = Hunger + random.randint(31,40)
+                    if (Hunger > 100):
+                        Hunger = 100
+                    print("Hunger:", Hunger)
+                if HungerAdd == 5:
+                    Hunger = Hunger + random.randint(41,50)
+                    if (Hunger > 100):
+                        Hunger = 100
+                    print("Hunger:", Hunger)
+        if (SoupCan == 1 and Hunger < 100):
+            print("You have", SoupCan, "can of soup")
+            Eat = input("Would you like to eat one?  y/n")
+            if Eat == "n":
+                Eatloop = False
+            if Eat == "y":
+                SoupCan = SoupCan - 1
+                HungerAdd = random.randint(1,5)
+                if HungerAdd == 1:
+                    Hunger = Hunger + random.randint(10,15)
+                    if (Hunger > 100):
+                        Hunger = 100
+                    print("Hunger:", Hunger)
+                if HungerAdd == 2:
+                    Hunger = Hunger + random.randint(16,20)
+                    if (Hunger > 100):
+                        Hunger = 100
+                    print("Hunger:", Hunger)
+                if HungerAdd == 3:
+                    Hunger = Hunger + random.randint(21,25)
+                    if (Hunger > 100):
+                        Hunger = 100
+                    print("Hunger:", Hunger)
+                if HungerAdd == 4:
+                    Hunger = Hunger + random.randint(31,40)
+                    if (Hunger > 100):
+                        Hunger = 100
+                    print("Hunger:", Hunger)
+                if HungerAdd == 5:
+                    Hunger = Hunger + random.randint(41,50)
+                    if (Hunger > 100):
+                        Hunger = 100
+                    print("Hunger:", Hunger)
+        if (Hunger >= 100):
+            print("You are full.")
+            Eatloop = False
+            Drinkloop = True
+    while (Drinkloop == True):
+        if (WaterBottle > 1 and Thirst < 100): 
+            print("You have", WaterBottle, "bottles of water.")
+            Drink = input("Would you like to drink one?  y/n")
+            if Drink == "n":
+                Drinkloop = False
+            if Drink == "y":
+                WaterBottle = WaterBottle - 1
+                WaterAdd = random.randint(1,5)
+                if WaterAdd == 1:
+                    Thirst = Thirst + random.randint(10,15)
+                    if (Thirst > 100):
+                        Thirst = 100
+                    print("Thirst:", Thirst)
+                if WaterAdd == 2:
+                    Thirst = Thirst + random.randint(16,24)
+                    if (Thirst > 100):
+                        Thirst = 100
+                    print("Thirst:", Thirst)
+                if WaterAdd == 3:
+                    Thirst = Thirst + random.randint(25,31)
+                    if (Thirst > 100):
+                        Thirst = 100
+                    print("Thirst:", Thirst)    
+                if WaterAdd == 4:
+                    Thirst = Thirst + random.randint(32,42)
+                    if (Thirst > 100):
+                        Thirst = 100
+                    print("Thirst:", Thirst)
+                if WaterAdd == 5:
+                    Thirst = Thirst + random.randint(43,50)
+                    if (Thirst > 100):
+                        Thirst = 100
+                    print("Thirst:", Thirst)
+        if (WaterBottle == 1 and Thirst < 100): 
+            print("You have", WaterBottle, "bottle of water.")
+            Drink = input("Would you like to drink one?  y/n")
+            if Drink == "n":
+                Drinkloop = False
+            if Drink == "y":
+                WaterBottle = WaterBottle - 1
+                WaterAdd = random.randint(1,5)
+                if WaterAdd == 1:
+                    Thirst = Thirst + random.randint(10,15)
+                    if (Thirst > 100):
+                        Thirst = 100
+                    print("Thirst:", Thirst)
+                if WaterAdd == 2:
+                    Thirst = Thirst + random.randint(16,24)
+                    if (Thirst > 100):
+                        Thirst = 100
+                    print("Thirst:", Thirst)
+                if WaterAdd == 3:
+                    Thirst = Thirst + random.randint(25,31)
+                    if (Thirst > 100):
+                        Thirst = 100
+                    print("Thirst:", Thirst)    
+                if WaterAdd == 4:
+                    Thirst = Thirst + random.randint(32,42)
+                    if (Thirst > 100):
+                        Thirst = 100
+                    print("Thirst:", Thirst)
+                if WaterAdd == 5:
+                    Thirst = Thirst + random.randint(43,50)
+                    if (Thirst > 100):
+                        Thirst = 100
+                    print("Thirst:", Thirst)
+        if (Thirst >= 100):
+            print("You are no longer thirsty")
+            Drinkloop = False
