@@ -8,62 +8,77 @@ Hungryloop = False
 Thirstyloop = False
 Eatloop = False
 Drinkloop = False
+Deadloop = False
 while (Bigloop == True):
     Hungryloop = True
     while (Hungryloop == True):
         Hungertake = random.randint(1,5)
         if (Hungertake == 1):
-            Hunger = random.randint(90,99)
+            Hunger = Hunger - random.randint(1,10)
             print("Hunger:", Hunger)
             Hungryloop = False
             Thirstyloop = True
         if (Hungertake == 2):
-            Hunger = random.randint(80,89)
+            Hunger = Hunger - random.randint(11,20)
             print("Hunger:", Hunger)
             Hungryloop = False
             Thirstyloop = True
         if (Hungertake == 3):
-            Hunger = random.randint(75,79)
+            Hunger = Hunger - random.randint(21,25)
             print("Hunger:", Hunger)
             Hungryloop = False
             Thirstyloop = True
         if (Hungertake == 4):
-            Hunger = random.randint(70,74)
+            Hunger = Hunger - random.randint(26,30)
             print("Hunger:", Hunger)
             Hungryloop = False
             Thirstyloop = True
         if (Hungertake == 5):
-            Hunger = random.randint(60,69)
+            Hunger = Hunger - random.randint(31,40)
             print("Hunger:", Hunger)
             Hungryloop = False
             Thirstyloop = True
+        if (Hunger <= 0):
+            Bigloop = False
+            Hungryloop = False
+            Thirstyloop = False
+            Eatloop = False
+            Drinkloop = False
+            Deadloop = True
     while (Thirstyloop == True):
         Thirsttake = random.randint(1,5)
         if (Thirsttake == 1):
-            Thirst = random.randint(90,99)
+            Thirst = Thirst - random.randint(1,10)
             print("Thirst:", Thirst)
             Thirstyloop = False
             Eatloop = True
         if (Thirsttake == 2):
-            Thirst = random.randint(80,89)
+            Thirst = Thirst - random.randint(11,20)
             print("Thirst:", Thirst)
             Thirstyloop = False
             Eatloop = True
         if (Thirsttake == 3):
-            Thirst = random.randint(75,79)
+            Thirst = Thirst - random.randint(21,30)
             print("Thirst:", Thirst)
             Thirstyloop = False
             Eatloop = True
         if (Thirsttake == 4):
-            Thirst = random.randint(70,74)
+            Thirst = Thirst - random.randint(32,39)
             print("Thirst:", Thirst)
             Thirstyloop = False
             Eatloop = True
         if (Thirsttake == 5):
-            Thirst = random.randint(60,69)
+            Thirst = Thirst - random.randint(40,50)
             print("Thirst:", Thirst)
             Thirstyloop = False
             Eatloop = True
+        if (Thirst <= 0):
+            Bigloop = False
+            Hungryloop = False
+            Thirstyloop = False
+            Eatloop = False
+            Drinkloop = False
+            Deadloop = True
     while (Eatloop == True):
         if (SoupCan > 1 and Hunger < 100): 
             print("You have", SoupCan, "cans of soup.")
@@ -136,6 +151,8 @@ while (Bigloop == True):
             print("You are full.")
             Eatloop = False
             Drinkloop = True
+        if (Hunger <= 0):
+            Bigloop = False
     while (Drinkloop == True):
         if (WaterBottle > 1 and Thirst < 100): 
             print("You have", WaterBottle, "bottles of water.")
@@ -206,3 +223,6 @@ while (Bigloop == True):
         if (Thirst >= 100):
             print("You are no longer thirsty")
             Drinkloop = False
+while (Deadloop == True):
+    print("You died")
+    Deadloop = False
