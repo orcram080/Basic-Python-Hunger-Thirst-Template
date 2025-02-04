@@ -39,6 +39,7 @@ while (Bigloop == True):
             Hungryloop = False
             Thirstyloop = True
         if (Hunger <= 0):
+            Hunger = 0
             Bigloop = False
             Hungryloop = False
             Thirstyloop = False
@@ -73,6 +74,7 @@ while (Bigloop == True):
             Thirstyloop = False
             Eatloop = True
         if (Thirst <= 0):
+            Thirst = 0
             Bigloop = False
             Hungryloop = False
             Thirstyloop = False
@@ -224,5 +226,8 @@ while (Bigloop == True):
             print("You are no longer thirsty")
             Drinkloop = False
 while (Deadloop == True):
-    print("You died")
+    if (Hunger <= 0):
+        print("You died of starvation")
+    if (Thirst <= 0):
+        print("You died of thirst")
     Deadloop = False
