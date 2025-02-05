@@ -149,6 +149,10 @@ while (Bigloop == True):
                     if (Hunger > 100):
                         Hunger = 100
                     print("Hunger:", Hunger)
+        if (SoupCan == 0):
+            print("You are out of soup cans")
+            Eatloop = False
+            Drinkloop = True
         if (Hunger >= 100):
             print("You are full.")
             Eatloop = False
@@ -222,6 +226,9 @@ while (Bigloop == True):
                     if (Thirst > 100):
                         Thirst = 100
                     print("Thirst:", Thirst)
+        if (WaterBottle == 0):
+            print("You are out of watterbottles")
+            Drinkloop = False
         if (Thirst >= 100):
             print("You are no longer thirsty")
             Drinkloop = False
